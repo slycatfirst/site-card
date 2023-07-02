@@ -4,15 +4,17 @@
         <meta charset="utf=8">
         <meta name="viewport" content="device-width, initial-scale=1">
         <link rel="stylesheet" href="style/css.css">
+        <script src="jquery/jquery-3.7.0.min.js"></script>
+        <script rel="js" src="js/script.js"></script>
     </head>
     <body>
-        <div class="header container_width container_padding">
+        <div id="home" class="header container_width container_padding">
             <div class="header__topnav">
-                <div class="header__topnav_button">Home</div>
-                <div class="header__topnav_button">About me</div>
-                <div class="header__topnav_button">Skills</div>
-                <div class="header__topnav_button">Portfolio</div>
-                <div class="header__topnav_button">Contacts</div>
+                <a href="#home" class="header__topnav_button">Home</a>
+                <a href="#aboutme" class="header__topnav_button">About me</a>
+                <a href="#skills" class="header__topnav_button">Skills</a>
+                <a href="#portfolio" class="header__topnav_button">Portfolio</a>
+                <a href="#contacts" class="header__topnav_button">Contacts</a>
             </div>
             <div class="header__shortinfo-block_375px">
                 <div class="header__shortinfo-block">
@@ -21,18 +23,12 @@
                         24 years old, Minsk</div>
                     <div class="header__language">RU <span class="header__language_black">| ENG</span></div>
                 </div>
-                <div class="header__topnav_375px">
-                    <svg width="33" height="20" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="33" height="3.83721" fill="black"/>
-                        <rect y="7.67383" width="33" height="3.83721" fill="black"/>
-                        <rect y="15.3496" width="33" height="3.83721" fill="black"/>
-                        </svg>                    
-                </div>
+                <div class="header__burger"></div>
             </div>
             <img class="header__photo">
         </div>
         <div class="aboutme container_gray">
-             <div class="aboutme__head container_width container_padding">About me</div>
+             <div id="aboutme" class="aboutme__head container_width container_padding">About me</div>
               <div class="aboutme__info container_width container_padding">
                     <p>Hi, I'm Denis - UX/UI designer from Minsk.<br> 
                         I'm interested in design and everything connected with it.</p>
@@ -42,7 +38,7 @@
                         with wonderful people.</p>
             </div>
         </div>
-        <div class="skills container_width container_padding">
+        <div id="skills" class="skills container_width container_padding">
             <div class="skills__head">Skills</div>
             <div class="skills__info">I work in such programs as</div>
             <div class="skills__program">
@@ -186,7 +182,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio container_gray">
+        <div id="portfolio" class="portfolio container_gray">
             <div class="portfolio__head container_width container_padding">Portfolio</div>
             <div class="portfolio__card container_width container_padding">
                 <img class="portfolio__card_photo" src="img/Слой 8.png">
@@ -201,7 +197,7 @@
                 <a class="portfolio__card_name" href="#Braun_Landing_Page">Braun Landing Page - Concept</a>
             </div>
         </div>
-        <div class="contacts container_width container_padding">
+        <div id="contacts" class="contacts container_width container_padding">
             <div class="contacts__head">Contacts</div>
             <div class="contacts__text">Want to know more or just chat?<br> 
                 You are welcome!</div>

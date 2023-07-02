@@ -71,7 +71,7 @@ body {
 .header__topnav_button {
     font-family: 'Gilroy-Bold';
     font-size: 18px;
-
+    text-decoration: none;
     color: #828282;
 
     cursor: pointer;
@@ -127,8 +127,25 @@ body {
     align-items: center;
     justify-content: center;
 }
-.header__topnav_375px {
+
+.header__burger,
+.header__burger::after,
+.header__burger::before {
+    display: block;
+    width: 33px;
+    height: 4px;
+    background-color: #000000;
+    cursor: pointer;
     visibility: hidden;
+    z-index: 2;
+}
+.header__burger::after {
+    content: '';
+    margin-top: 4px;
+}
+.header__burger::before {
+    content: '';
+    margin-top: 8px;
 }
 
 .aboutme {
@@ -314,14 +331,62 @@ body {
     .container_padding {
         padding: 0 29px;
     }
-
     .header__topnav {
-        display: block;
-        position: absolute;
-        visibility: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: -100%;
+        min-height: 812px;
+        padding-top: 65px;
+        padding-left: 26px;
+        transition: all 0.3s ease 0s;
+        border-bottom: none;
+        background: #FFFFFF;
     }
-    .header__topnav_375px {
+    .header__topnav * {
+        font-size: 34px;
+        padding-bottom: 65px;
+    }
+    .header__topnav.active {
+        top: 0;
+    }
+    .header__language  {
+        position: fixed;
+        width: 100%;
+        margin-top: 611px;
+        margin-left: 70%;
+        top:-100%;
+        padding-left: 26px;
+        transition: all 0.3s ease 0s;
+        font-size: 34px;
+        transform: rotate(0deg);
+    }
+    .header__language.active {
+        top: 0;
+    }
+    .header__burger,
+    .header__burger::after,
+    .header__burger::before {
         visibility: visible;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger.active,
+    .header__burger.active::after,
+    .header__burger.active::before {
+        margin: 0;
+        background-color: #828282;
+        width: 28px;
+    }
+    .header__burger.active {
+        transform: rotate(45deg);
+    }
+    .header__burger.active::after {
+        visibility: hidden;
+        transform: rotate(-90deg);
+    }
+    .header__burger.active::before {
+        transform: rotate(-90deg);
     }
     .header__photo {
         background: url('../img/Novik316x478.png');
@@ -339,10 +404,6 @@ body {
         flex-direction: column;
         align-items: flex-start;
         padding-top: 0;
-    }
-    .header__language  {
-        height: 0;
-        visibility: hidden;
     }
 
     .skills__program {
